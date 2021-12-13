@@ -83,4 +83,27 @@ const getMovies = () => {
 
 }
 
-getMovies();
+//DELTE FUNCTIONALITY
+document.querySelector("#deleteMovie").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const deleteMovieForm = this;
+    const id = deleteMovieForm.movieId.value;
+
+    axios
+        .delete(`http://localhost:8080/remove/${id}`)
+        .then(response => {
+            console.log(response)
+            deleteMovieForm.reset();
+            getAllMovies.innerHTML = "";
+            getMovies();
+            
+
+        })
+        .catch(error => console.error(error));
+
+
+});
+
+
+getMovies()
