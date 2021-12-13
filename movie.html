@@ -18,25 +18,34 @@
         <h2>Movie watch list</h2>
     </div>
     <main class="container">
-        <section>
-            <h2>Create movie</h2>
-            <form id="createMovie">
-                <div class="col-sm-9 col-md-3">
-                    <label class="form-label" for="movieName">Name:</label>
-                    <input class="form-control" type="text" name="movieName" id="movieName">
-                    <label class="form-label" for="movieName">Genre:</label>
-                    <input class="form-control" type="text" name="genre" id="movieGenre">
-                    <label class="form-label" for="movieName">Year released:</label>
-                    <input class="form-control" type="number" name="yearReleased" id="movieYearReleased">
-                    <label class="form-label" for="movieName">Available on:</label>
-                    <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
-                </div>
-                <div>
-                    <button class="btn-secondary btn-sm" type="reset">Reset</button>
-                    <button class="btn-primary btn-sm" type="submit">Submit</button>
-                </div>
-            </form>
-        </section>
+        <div>
+            <section>
+                <h2>Create movie</h2>
+                <form id="createMovie">
+                    <div class="col-sm-9 col-md-3">
+                        <label class="form-label" for="movieName">Name:</label>
+                        <input class="form-control" type="text" name="movieName" id="movieName">
+                        <label class="form-label" for="movieName">Genre:</label>
+                        <input class="form-control" type="text" name="genre" id="movieGenre">
+                        <label class="form-label" for="movieName">Year released:</label>
+                        <input class="form-control" type="number" name="yearReleased" id="movieYearReleased">
+                        <label class="form-label" for="movieName">Available on:</label>
+                        <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
+                    </div>
+                    <div>
+                        <button class="btn-secondary btn-sm" type="reset">Reset</button>
+                        <button class="btn-primary btn-sm" type="submit">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="allMovies">
+            <section>
+                <h2>Get Movies</h2>
+                <div id="getAllMovies"></div>
+            </section>
+        </div>
+
     </main>
     <script src="./scripts/movie.js"></script>
 </body>
