@@ -107,3 +107,32 @@ document.querySelector("#deleteMovie").addEventListener("submit", function(event
 
 
 getMovies()
+
+
+//UPDATE FUNCTIONAILITY
+document.querySelector("#updateMovie").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const createUpdateForm = this;
+
+    const idToUpdate = this;
+    const update = idToUpdate.updateId.value;
+
+    const movieUpdateData = {
+        movieName: createUpdateForm.movieName.value,
+        genre: createUpdateForm.genre.value,
+        yearReleased: createUpdateForm.yearReleased.value,
+        availableOn: createUpdateForm.availableOn.value,
+    };
+
+    axios
+        .put(`http://localhost:8080/replace/${update}`, movieUpdateData)
+        .then(response => {
+            getAllMovies.innerHTML = "";
+            getMovies();
+            console.log(response);
+            createMovieForm.reset();
+        })
+        .catch(error => console.log(error))
+
+});
