@@ -33,11 +33,11 @@
                     <div class="col-sm-9 col-md-3">
                         <label class="form-label" for="movieName">Name:</label>
                         <input class="form-control" type="text" name="movieName" id="movieName">
-                        <label class="form-label" for="movieName">Genre:</label>
+                        <label class="form-label" for="movieGenre">Genre:</label>
                         <input class="form-control" type="text" name="genre" id="movieGenre">
-                        <label class="form-label" for="movieName">Year released:</label>
+                        <label class="form-label" for="yearReleased">Year released:</label>
                         <input class="form-control" type="number" name="yearReleased" id="movieYearReleased">
-                        <label class="form-label" for="movieName">Available on:</label>
+                        <label class="form-label" for="availableOn">Available on:</label>
                         <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
                     </div>
                     <div>
@@ -51,6 +51,25 @@
             <section>
                 <h2>Get Movies</h2>
                 <div id="getAllMovies"></div>
+            </section>
+        </div>
+
+        <div class="text-center">
+            <section>
+                <h2>Update entry</h2>
+                <form id="updateMovie">
+                    <label class="form-label" for="updateId">Id:</label>
+                    <input class="form-control" type="text" name="updateId" id="updateId">
+                    <label class="form-label" for="movieName">Name:</label>
+                    <input class="form-control" type="text" name="movieName" id="updateName">
+                    <label class="form-label" for="Genre">Genre:</label>
+                    <input class="form-control" type="text" name="genre" id="updateGenre">
+                    <label class="form-label" for="yearReleased">Year released:</label>
+                    <input class="form-control" type="number" name="yearReleased" id="updateYearReleased">
+                    <label class="form-label" for="availableOn">Available on:</label>
+                    <input class="form-control" type="text" name="availableOn" id="updateAvailableOn">
+                    <button class="btn-primary btn-sm" type="submit">Submit</button>
+                </form>
             </section>
         </div>
 
