@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
-    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,9 +19,16 @@
     </div>
     <main class="container">
         <div>
-            <section >
+            <div class="allMovies">
+                <section>
+                    <h2>Get Movies</h2>
+                    <div id="getAllMovies" class="row row-cols-md-4"></div>
+                </section>
+            </div>
+            </div>
+            <section>
                 <h2>Delete</h2>
-                <form id="deleteMovie">
+                <form class="col-sm-9 col-md-1" id="deleteMovie">
                     <label class="form-label" for="movieId">Id:</label>
                     <input class="form-control" type="text" name="movieId" id="movieId">
                     <button class="btn-primary btn-sm" type="submit">Delete</button>
@@ -38,7 +45,7 @@
                         <label class="form-label" for="yearReleased">Year released:</label>
                         <input class="form-control" type="number" name="yearReleased" id="movieYearReleased">
                         <label class="form-label" for="availableOn">Available on:</label>
-                        <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
+                        <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">                     
                     </div>
                     <div>
                         <button class="btn-secondary btn-sm" type="reset">Reset</button>
@@ -47,19 +54,12 @@
                 </form>
             </section>
         </div>
-        <div class="allMovies">
-            <section>
-                <h2>Get Movies</h2>
-                <div id="getAllMovies"></div>
-            </section>
-        </div>
 
-        <div class="text-center">
-            <section>
-                <h2>Update entry</h2>
-                <form id="updateMovie">
-                    <label class="form-label" for="updateId">Id:</label>
-                    <input class="form-control" type="text" name="updateId" id="updateId">
+        <div class="modal">
+            <div class="modal-content">
+                <form id="modalForm">
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                    <p>Update form</p>
                     <label class="form-label" for="movieName">Name:</label>
                     <input class="form-control" type="text" name="movieName" id="updateName">
                     <label class="form-label" for="Genre">Genre:</label>
@@ -69,8 +69,9 @@
                     <label class="form-label" for="availableOn">Available on:</label>
                     <input class="form-control" type="text" name="availableOn" id="updateAvailableOn">
                     <button class="btn-primary btn-sm" type="submit">Submit</button>
+                    <button class="btn-secondary btn-sm" type="reset">Reset</button>
                 </form>
-            </section>
+            </div>
         </div>
 
     </main>
