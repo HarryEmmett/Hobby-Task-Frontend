@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie</title>
-    <link rel="stylesheet" href="./styles/movie.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
         integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/movie.css">
 </head>
 
 <body>
@@ -25,11 +25,14 @@
                     <div id="getAllMovies" class="row row-cols-md-3"></div>
                 </section>
             </div>
+        </div>
+        <section>
+            <div class="text-center">
+                <h2>CreateMovie</h2>
             </div>
-            <section>
-                <h2>Create movie</h2>
-                <form id="createMovie">
-                    <div class="col-sm-9 col-md-3">
+            <form id="createMovie" v class="text-center">
+                <div>
+                    <form id="createMovie" class="col-sm-9 col-md-4">
                         <label class="form-label" for="movieName">Name:</label>
                         <input class="form-control" type="text" name="movieName" id="movieName">
                         <label class="form-label" for="movieGenre">Genre:</label>
@@ -37,47 +40,45 @@
                         <label class="form-label" for="yearReleased">Year released:</label>
                         <input class="form-control" type="text" name="yearReleased" id="movieYearReleased">
                         <label class="form-label" for="availableOn">Available on:</label>
-                        <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">                     
-                    </div>
-                    <div>
+                        <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
                         <button class="btn-secondary btn-sm" type="reset">Reset</button>
                         <button class="btn-primary btn-sm" type="submit">Submit</button>
-                    </div>
+                    </form>
+                </div>
+            </form>
+        </section>
+        <section>
+            <div id="genreDelete" class="text-center">
+                <h2>Search by genre</h2>
+                <form class="col-sm-9 col-md-4" id="searchGenre">
+                    <label class="form-label" for="genre">Genre:</label>
+                    <input class="form-control" type="text" name="genre" id="searchGenre">
+                    <button class="btn-primary btn-sm" type="submit">Search</button>
                 </form>
-            </section>
-            <section>
-                <div class="text-center">
-                    <h2>Search by genre</h2>
-                    <form class="text-center" id="searchGenre">
-                        <label class="form-label" for="genre">Genre:</label>
-                        <input class="form-control" type="text" name="genre" id="searchGenre">
-                        <button class="btn-primary btn-sm" type="submit">Search</button>
-                    </form>
-                    <section>
-                    <h2>Delete by id</h2>
-                    <form class="text-center" id="deleteMovie">
-                        <label class="form-label" for="movieId">Id:</label>
-                        <input class="form-control" type="text" name="movieId" id="movieId">
-                        <button class="btn-primary btn-sm" type="submit">Delete</button>
-                    </form>
-                </div>
-            </section>
-            <section>
-                <div class="text-center">
-                    <h2>Available on</h2>
-                    <button class="push btn-danger btn-lg" id="netflix" type="submit">Netflix</button>
-                    <button class="push btn-info btn-lg" id="disney" type="submit">Disney</button>
-                    <button class="push btn-primary btn-lg" id="amazon" type="submit">Amazon</button>
-                    <button class="btn-secondary btn-lg" type="submit" onclick="getMovies()">Show All</button>
-                </div>
-            </section>
-        </div>
-        
+                <h2>Delete by id</h2>
+                <form class="col-md-4" id="deleteMovie">
+                    <label class="form-label" for="movieId">Id:</label>
+                    <input class="form-control" type="text" name="movieId" id="movieId">
+                    <button class="btn-primary btn-sm" type="submit">Delete</button>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="text-center">
+                <h2>Available on</h2>
+                <button class="push btn-danger btn-lg" id="netflix" type="submit">Netflix</button>
+                <button class="push btn-info btn-lg" id="disney" type="submit">Disney</button>
+                <button class="push btn-primary btn-lg" id="amazon" type="submit">Amazon</button>
+                <button class="btn-secondary btn-lg" type="submit" onclick="getMovies()">Show All</button>
+            </div>
+        </section>
+
+
 
 
     </main>
 
-    <div class="modal" id = "myModal">
+    <div class="modal" id="myModal">
         <div class="modal-content">
             <form id="modalForm" autocomplete="off">
                 <button type="button" class="btn-close btn-info" aria-label="Close"></button>
@@ -97,7 +98,9 @@
     </div>
 
     <script src="./scripts/movie.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

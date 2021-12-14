@@ -1,3 +1,26 @@
 .getAllMovies {
     text-align: center;
 }
+
+form {
+    text-align: center;
+}
+
+#searchGenre {
+    margin: 0 auto;
+    width: 450px; 
+    text-align: center;
+}
+
+#deleteMovie {
+    margin: 0 auto;
+    width: 450px; 
+    text-align: center;
+
+}
+
+#createMovie {
+    margin: 0 auto;
+    width: 450px; 
+    text-align: center;
+}
