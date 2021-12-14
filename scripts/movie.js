@@ -36,7 +36,6 @@ const getMovies = () => {
             const moviesList = response.data;
             getAllMovies.innerHTML = "";
             for (let movie of moviesList) {
-
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
 
@@ -104,12 +103,11 @@ const getMovies = () => {
                                 getAllMovies.innerHTML = "";
                                 getMovies();
                                 closeModal();
-                        
+
                             })
                             .catch(error => console.log(error))
 
                     });
-
 
                     // const updateName = prompt("Update name: ");
                     // const updateGenre = prompt("Update genre: ");
@@ -169,7 +167,120 @@ document.querySelector("#deleteMovie").addEventListener("submit", function (even
 
 });
 
+// //SEARCH BY GENRE
+document.querySelector("#searchGenre").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const wantedGenre = this;
+    const searchGenre = wantedGenre.searchGenre.value;
+    axios
+        .get(`http://localhost:8080/getByGenre/${searchGenre}`)
+        .then(response => {
+            const genreList = response.data;
+            console.log(genreList);
+            getAllMovies.innerHTML = "";
+            for (let movieGenre of genreList) {
+                const userContainer = document.createElement("div");
+                userContainer.classList.add("getAllMovies");
+
+                const genreCard = document.createElement("div");
+                genreCard.style = `background-color: red`;
+                genreCard.classList.add("card");
+
+                const genreBody = document.createElement("div");
+                genreBody.classList.add("card-body");
+
+                const genreName = document.createElement("h3");
+                genreName.classList.add("card-title");
+                genreName.innerText = movieGenre.movieName;
+                genreBody.appendChild(genreName);
+
+                const genre = document.createElement("p");
+                genre.classList.add("card-text");
+                genre.innerText = `Genre: ${movieGenre.genre}`;
+                genreBody.appendChild(genre);
+
+                const yearReleased = document.createElement("p");
+                yearReleased.classList.add("card-text");
+                yearReleased.innerText = `Released: ${movieGenre.yearReleased}`;
+                genreBody.appendChild(yearReleased);
+
+                const availableOn = document.createElement("p");
+                availableOn.classList.add("card-text");
+                availableOn.innerText = `Available on: ${movieGenre.availableOn}`;
+                genreBody.appendChild(availableOn);
+
+                genreCard.appendChild(genreBody);
+                userContainer.appendChild(genreCard);
+                getAllMovies.appendChild(userContainer);
+            }
+        })
+        .catch(error => console.error(error));
+
+
+});
+
+//SEARCH PLATFORM
+document.querySelectorAll(".push").forEach(button => button.addEventListener("click", ({ }) => {
+    const platform = button.id;
+    console.log(platform);
+
+    axios
+        .get(`http://localhost:8080/availableOn/${platform}`)
+        .then(response => {
+            const platformOn = response.data;
+            console.log(platform);
+            getAllMovies.innerHTML = "";
+            for (let platform of platformOn) {
+                const userContainer = document.createElement("div");
+                userContainer.classList.add("getAllMovies");
+
+                const platformCard = document.createElement("div");
+                platformCard.style = `background-color: red`;
+                platformCard.classList.add("card");
+
+                const platformBody = document.createElement("div");
+                platformBody.classList.add("card-body");
+
+                const platformName = document.createElement("h3");
+                platformName.classList.add("card-title");
+                platformName.innerText = platform.movieName;
+                platformBody.appendChild(platformName);
+
+                const genre = document.createElement("p");
+                genre.classList.add("card-text");
+                genre.innerText = `Genre: ${platform.genre}`;
+                platformBody.appendChild(genre);
+
+                const yearReleased = document.createElement("p");
+                yearReleased.classList.add("card-text");
+                yearReleased.innerText = `Released: ${platform.yearReleased}`;
+                platformBody.appendChild(yearReleased);
+
+                const availableOn = document.createElement("p");
+                availableOn.classList.add("card-text");
+                availableOn.innerText = `Available on: ${platform.availableOn}`;
+                platformBody.appendChild(availableOn);
+
+                platformCard.appendChild(platformBody);
+                userContainer.appendChild(platformCard);
+                getAllMovies.appendChild(userContainer);
+            }
+        })
+        .catch(error => console.error(error));
+
+
+
+}));
+
+function closeModal() {
+    const selectModal = document.querySelector(".modal");
+    selectModal.style.display = "none";
+
+}
+
 function openModal() {
+
     const selectModal = document.querySelector(".modal");
     const selectCloseButton = document.querySelector(".btn-close");
 
@@ -179,18 +290,33 @@ function openModal() {
         selectModal.style.display = "none";
     }
 
-    //     window.onclick = function(closeModal){
-    //     if(closeModal.target === selectModal){
-    //         selectModal.style.display = "none";
-    //     } 
-    // }
+    window.onclick = function (closeModal) {
+        if (closeModal.target === selectModal) {
+            selectModal.style.display = "none";
+        }
+    }
 }
 
-function closeModal() {
-    const selectModal = document.querySelector(".modal");
-    selectModal.style.display = "none";
 
-}
+
+// axios
+//     .get(`http://localhost:8080/getByGenre/${searchGenre}`)
+//     .then(response => {
+//     })
+//     .catch(error => console.error(error));
+
+
+
+
+// function getValueOfButton(id) {
+//     {
+//         console.log(id);
+//         return id;
+//     }
+
+// }
+
+
 
 getMovies()
 
