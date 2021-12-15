@@ -69,3 +69,7 @@ body {
 #mainHeader {
     color: white;
 }
+
+#movieCounter {
+    text-align: center;
+}

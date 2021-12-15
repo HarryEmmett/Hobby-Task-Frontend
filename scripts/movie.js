@@ -1,6 +1,7 @@
 "use strict";
 
 const getAllMovies = document.querySelector("#getAllMovies");
+const selectHeader = document.querySelector("#movieCounter");
 
 //CREATE FUNCTIONALITY
 document.querySelector("#createMovie").addEventListener("submit", function (event) {
@@ -22,6 +23,7 @@ document.querySelector("#createMovie").addEventListener("submit", function (even
             getMovies();
             console.log(response);
             createMovieForm.reset();
+            window.location.reload();
         })
         .catch(error => console.log(error))
 
@@ -33,9 +35,20 @@ const getMovies = () => {
         .get("http://localhost:8080/getAll")
         .then(response => {
             console.log(response);
+            
+
             const moviesList = response.data;
             getAllMovies.innerHTML = "";
+            selectHeader.innerHTML = "";
+
+            const howManyMovies = Object.keys(response.data).length;
+            const movieCounter = document.createElement("h2");   //DISPLAYS LENGTH OF ARRAY FOR MOVIE LIST LENGTH
+            movieCounter.innerText = "Movie counter: " + howManyMovies;
+            selectHeader.appendChild(movieCounter);
+
+
             for (let movie of moviesList) {
+
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
 
@@ -75,7 +88,10 @@ const getMovies = () => {
                 deleteMovie.addEventListener("click", () => {
                     axios
                         .delete(`http://localhost:8080/remove/${movie.id}`)
-                        .then(response => getMovies())
+                        .then(response => {
+                            getMovies()
+                            window.location.reload();
+                        })
                         .catch(error => console.log(error))
                 });
 
