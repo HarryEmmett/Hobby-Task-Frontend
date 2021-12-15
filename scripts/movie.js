@@ -40,7 +40,7 @@ const getMovies = () => {
                 userContainer.classList.add("getAllMovies");
 
                 const movieCard = document.createElement("div");
-                movieCard.style = `background-color: red`;
+                movieCard.style = `background-color: slateblue`;
                 movieCard.classList.add("card");
 
                 const movieBody = document.createElement("div");
@@ -71,7 +71,7 @@ const getMovies = () => {
 
                 const deleteMovie = document.createElement("button");
                 deleteMovie.innerText = "delete";
-                deleteMovie.classList.add("btn", "btn-light");
+                deleteMovie.classList.add("btn", "btn-danger");
                 deleteMovie.addEventListener("click", () => {
                     axios
                         .delete(`http://localhost:8080/remove/${movie.id}`)
@@ -81,7 +81,7 @@ const getMovies = () => {
 
                 const updateMovie = document.createElement("button");
                 updateMovie.innerText = "update";
-                updateMovie.classList.add("btn", "btn-warning");
+                updateMovie.classList.add("btn", "btn-info");
                 updateMovie.addEventListener("click", () => {
                     openModal();
 
@@ -232,12 +232,20 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
             console.log(platform);
             getAllMovies.innerHTML = "";
             for (let platform of platformOn) {
+                const platformCard = document.createElement("div");
+                if (platform.availableOn === "Netflix") {
+                    platformCard.style = `background-color: red`;
+                    platformCard.classList.add("card");
+                } else if (platform.availableOn === "Amazon") {
+                    platformCard.style = `background-color: dodgerblue`;
+                    platformCard.classList.add("card");
+                } else {
+                    platformCard.style = `background-color: teal`;
+                    platformCard.classList.add("card");
+                } 
+                
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
-
-                const platformCard = document.createElement("div");
-                platformCard.style = `background-color: red`;
-                platformCard.classList.add("card");
 
                 const platformBody = document.createElement("div");
                 platformBody.classList.add("card-body");
@@ -265,7 +273,8 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
                 platformCard.appendChild(platformBody);
                 userContainer.appendChild(platformCard);
                 getAllMovies.appendChild(userContainer);
-            }
+            
+        }
         })
         .catch(error => console.error(error));
 
@@ -300,7 +309,7 @@ function openModal() {
 getMovies()
 
 
-//UPDATE FUNCTIONAILITY
+//OLD UPDATE FUNCTIONAILITY
 // document.querySelector("#updateMovie").addEventListener("submit", function (event) {
 //     event.preventDefault();
 
