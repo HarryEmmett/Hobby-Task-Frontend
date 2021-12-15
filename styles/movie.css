@@ -24,3 +24,15 @@ form {
     width: 450px; 
     text-align: center;
 }
+
+#modalSubmit {
+    text-align: center;
+    width: 30mm;  
+    height: 12mm;
+}
+
+#modalReset {
+    text-align: center;
+    width: 30mm;  
+    height: 12mm;
+}

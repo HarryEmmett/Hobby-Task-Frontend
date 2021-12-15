@@ -294,29 +294,8 @@ function openModal() {
         if (closeModal.target === selectModal) {
             selectModal.style.display = "none";
         }
-    }
 }
-
-
-
-// axios
-//     .get(`http://localhost:8080/getByGenre/${searchGenre}`)
-//     .then(response => {
-//     })
-//     .catch(error => console.error(error));
-
-
-
-
-// function getValueOfButton(id) {
-//     {
-//         console.log(id);
-//         return id;
-//     }
-
-// }
-
-
+}
 
 getMovies()
 
