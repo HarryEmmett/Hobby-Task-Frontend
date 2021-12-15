@@ -35,7 +35,7 @@ const getMovies = () => {
         .get("http://localhost:8080/getAll")
         .then(response => {
             console.log(response);
-            
+
 
             const moviesList = response.data;
             getAllMovies.innerHTML = "";
@@ -261,8 +261,8 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
                 } else {
                     platformCard.style = `background-color: teal`;
                     platformCard.classList.add("card");
-                } 
-                
+                }
+
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
 
@@ -292,14 +292,70 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
                 platformCard.appendChild(platformBody);
                 userContainer.appendChild(platformCard);
                 getAllMovies.appendChild(userContainer);
-            
-        }
+
+            }
         })
         .catch(error => console.error(error));
 
 
 
 }));
+
+//SEARCH BY NAME
+document.querySelector("#searchName").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log(this);
+    const wantedName = this;
+    const searchName = wantedName.searchName.value;
+    axios
+        .get(`http://localhost:8080/getByName/${searchName}`)
+        .then(response => {
+            const movieRequest = response.data;
+            getAllMovies.innerHTML = "";
+
+            const userContainer = document.createElement("div");
+            userContainer.classList.add("getAllMovies");
+
+            const requestedCard = document.createElement("div");
+            requestedCard.style = `background-color: purple`;
+            requestedCard.classList.add("card");
+
+            const requestedBody = document.createElement("div");
+            requestedBody.classList.add("card-body");
+
+            const requestedName = document.createElement("h3");
+            requestedName.classList.add("card-text");
+            requestedName.innerText = movieRequest.movieName;
+            requestedBody.appendChild(requestedName);
+
+            const requestedGenre = document.createElement("p");
+            requestedGenre.classList.add("card-text");
+            requestedGenre.innerText = `Genre: ${movieRequest.genre}`;
+            requestedBody.appendChild(requestedGenre);
+
+            const requestedYearReleased = document.createElement("p");
+            requestedYearReleased.classList.add("card-text");
+            requestedYearReleased.innerText = `Released: ${movieRequest.yearReleased}`;
+            requestedBody.appendChild(requestedYearReleased);
+
+            const requestedAvailableOn = document.createElement("p");
+            requestedAvailableOn.classList.add("card-text");
+            requestedAvailableOn.innerText = `Available on: ${movieRequest.availableOn}`;
+            requestedBody.appendChild(requestedAvailableOn);
+
+            requestedCard.appendChild(requestedBody);
+            userContainer.appendChild(requestedCard);
+            getAllMovies.appendChild(userContainer);
+
+            wantedName.reset();
+
+        })
+        .catch(error => console.error(error));
+
+
+
+});
 
 function closeModal() {
     const selectModal = document.querySelector(".modal");
@@ -322,7 +378,7 @@ function openModal() {
         if (closeModal.target === selectModal) {
             selectModal.style.display = "none";
         }
-}
+    }
 }
 
 getMovies()
