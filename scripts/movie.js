@@ -40,7 +40,7 @@ const getMovies = () => {
                 userContainer.classList.add("getAllMovies");
 
                 const movieCard = document.createElement("div");
-                movieCard.style = `background-color: red`;
+                movieCard.style = `background-color: slateblue`;
                 movieCard.classList.add("card");
 
                 const movieBody = document.createElement("div");
@@ -71,7 +71,7 @@ const getMovies = () => {
 
                 const deleteMovie = document.createElement("button");
                 deleteMovie.innerText = "delete";
-                deleteMovie.classList.add("btn", "btn-light");
+                deleteMovie.classList.add("btn", "btn-danger");
                 deleteMovie.addEventListener("click", () => {
                     axios
                         .delete(`http://localhost:8080/remove/${movie.id}`)
@@ -81,7 +81,7 @@ const getMovies = () => {
 
                 const updateMovie = document.createElement("button");
                 updateMovie.innerText = "update";
-                updateMovie.classList.add("btn", "btn-warning");
+                updateMovie.classList.add("btn", "btn-info");
                 updateMovie.addEventListener("click", () => {
                     openModal();
 
@@ -103,6 +103,7 @@ const getMovies = () => {
                                 getAllMovies.innerHTML = "";
                                 getMovies();
                                 closeModal();
+                                window.location.reload();
 
                             })
                             .catch(error => console.log(error))
@@ -184,14 +185,14 @@ document.querySelector("#searchGenre").addEventListener("submit", function (even
                 userContainer.classList.add("getAllMovies");
 
                 const genreCard = document.createElement("div");
-                genreCard.style = `background-color: red`;
+                genreCard.style = `background-color: hotpink`;
                 genreCard.classList.add("card");
 
                 const genreBody = document.createElement("div");
                 genreBody.classList.add("card-body");
 
                 const genreName = document.createElement("h3");
-                genreName.classList.add("card-title");
+                genreName.classList.add("card-text");
                 genreName.innerText = movieGenre.movieName;
                 genreBody.appendChild(genreName);
 
@@ -213,6 +214,8 @@ document.querySelector("#searchGenre").addEventListener("submit", function (even
                 genreCard.appendChild(genreBody);
                 userContainer.appendChild(genreCard);
                 getAllMovies.appendChild(userContainer);
+
+                wantedGenre.reset();
             }
         })
         .catch(error => console.error(error));
@@ -232,12 +235,20 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
             console.log(platform);
             getAllMovies.innerHTML = "";
             for (let platform of platformOn) {
+                const platformCard = document.createElement("div");
+                if (platform.availableOn === "Netflix") {
+                    platformCard.style = `background-color: crimson`;
+                    platformCard.classList.add("card");
+                } else if (platform.availableOn === "Amazon") {
+                    platformCard.style = `background-color: dodgerblue`;
+                    platformCard.classList.add("card");
+                } else {
+                    platformCard.style = `background-color: teal`;
+                    platformCard.classList.add("card");
+                } 
+                
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
-
-                const platformCard = document.createElement("div");
-                platformCard.style = `background-color: red`;
-                platformCard.classList.add("card");
 
                 const platformBody = document.createElement("div");
                 platformBody.classList.add("card-body");
@@ -265,7 +276,8 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
                 platformCard.appendChild(platformBody);
                 userContainer.appendChild(platformCard);
                 getAllMovies.appendChild(userContainer);
-            }
+            
+        }
         })
         .catch(error => console.error(error));
 
@@ -294,34 +306,13 @@ function openModal() {
         if (closeModal.target === selectModal) {
             selectModal.style.display = "none";
         }
-    }
 }
-
-
-
-// axios
-//     .get(`http://localhost:8080/getByGenre/${searchGenre}`)
-//     .then(response => {
-//     })
-//     .catch(error => console.error(error));
-
-
-
-
-// function getValueOfButton(id) {
-//     {
-//         console.log(id);
-//         return id;
-//     }
-
-// }
-
-
+}
 
 getMovies()
 
 
-//UPDATE FUNCTIONAILITY
+//OLD UPDATE FUNCTIONAILITY
 // document.querySelector("#updateMovie").addEventListener("submit", function (event) {
 //     event.preventDefault();
 

@@ -1,14 +1,36 @@
 .getAllMovies {
     text-align: center;
+    color: white;
 }
 
-form {
+.getAllMovies:hover {
+    color: black;
+
+}
+
+#movieId {
     text-align: center;
 }
 
 #searchGenre {
     margin: 0 auto;
     width: 450px; 
+    text-align: center;
+}
+
+#movieName {
+    text-align: center;
+}
+
+#movieGenre {
+    text-align: center;
+}
+
+#movieYearReleased {
+    text-align: center;
+}
+
+#movieAvailableOn {
     text-align: center;
 }
 
@@ -23,4 +45,27 @@ form {
     margin: 0 auto;
     width: 450px; 
     text-align: center;
+}
+
+#modalSubmit {
+    text-align: center;
+    width: 30mm;  
+    height: 12mm;
+}
+
+#modalReset {
+    text-align: center;
+    width: 30mm;  
+    height: 12mm;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0HBg4IBxQSCgkNDxYPEgwMDRcPFA0WFB0iGBgaEx8iHTQgJBooJxQfITEnJTErLi4wIyE1ODkwNyg5NDUBCgoKDQ0NGg0PFysZExkrKysrKystLSsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAwIEAf/EAB8QAQEBAAIBBQEAAAAAAAAAAAASEQECMUFRkbHwIv/EABgBAQEBAQEAAAAAAAAAAAAAAAADBAcG/8QAFhEBAQEAAAAAAAAAAAAAAAAAABES/9oADAMBAAIRAxEAPwDuklSSXsa5llOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplWSVZJSrRlKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplWSVZJSq+UpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmVZJUklKtGU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmVZJVklOtGUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmVZJVwxKtGUpJVwwplKSVcMKZSklXDCmUpJVwwplKSVcMKZSklXDCmUpJVwwplKSVcMKZSklXDCmUpJVwwplKSVcMKZSklXDCmUpJVwwplKSVcMKZSklXDCmUpJVwwplKSVcMKZSklXDCmVZJUklKr5TklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZVklWSUq0ZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZVklSSUq0ZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZTklSSSmU5JUkkplOSVJJKZVklWSUqvlKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplKSVZJKZSklWSSmUpJVkkplWSQTXhJIBCSQCEkgEJJAISSAQkkAhJIBCSQCEkgEJJAISSAQkkAhJIBCSQCEkgEJZ78c8ZP1oBDO2+3DPFc+j0CGdt8fvlrrxzn9eQCP/Z') no-repeat;
+    background-size: cover;
+}
+
+#mainHeader {
+    color: white;
 }
