@@ -103,6 +103,7 @@ const getMovies = () => {
                                 getAllMovies.innerHTML = "";
                                 getMovies();
                                 closeModal();
+                                window.location.reload();
 
                             })
                             .catch(error => console.log(error))
@@ -184,14 +185,14 @@ document.querySelector("#searchGenre").addEventListener("submit", function (even
                 userContainer.classList.add("getAllMovies");
 
                 const genreCard = document.createElement("div");
-                genreCard.style = `background-color: red`;
+                genreCard.style = `background-color: hotpink`;
                 genreCard.classList.add("card");
 
                 const genreBody = document.createElement("div");
                 genreBody.classList.add("card-body");
 
                 const genreName = document.createElement("h3");
-                genreName.classList.add("card-title");
+                genreName.classList.add("card-text");
                 genreName.innerText = movieGenre.movieName;
                 genreBody.appendChild(genreName);
 
@@ -213,6 +214,8 @@ document.querySelector("#searchGenre").addEventListener("submit", function (even
                 genreCard.appendChild(genreBody);
                 userContainer.appendChild(genreCard);
                 getAllMovies.appendChild(userContainer);
+
+                wantedGenre.reset();
             }
         })
         .catch(error => console.error(error));
@@ -234,7 +237,7 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
             for (let platform of platformOn) {
                 const platformCard = document.createElement("div");
                 if (platform.availableOn === "Netflix") {
-                    platformCard.style = `background-color: red`;
+                    platformCard.style = `background-color: crimson`;
                     platformCard.classList.add("card");
                 } else if (platform.availableOn === "Amazon") {
                     platformCard.style = `background-color: dodgerblue`;
