@@ -80,7 +80,7 @@ Once my Spring application was working correctly and I had confirmed it was work
 
 ![Imgur](https://i.imgur.com/gFZpyWa.png)
 
-FRONT END CONNECTION AND DESIGN
+### FRONT END CONNECTION AND DESIGN
 
 To connect my front end and back end I used axios requests to interact with with my API to store data entered on my webpage into my database, for this we used JavaScript. And for the layout and design of my page I used HTML, CSS and the Bootstrap framework. The end result is below:
 
