@@ -31,45 +31,65 @@ Testing - Acceptable coverage using MockMVC testing.
 
 I used Jira to create a Scrum board that made use of 4 different epics with each epic having user stories and child issues, which was placed into one four day sprint. This helped me to plan and keep track of my project and using smart commits ensured my board was regularly updated. As seen below:
 
-----------IMAGE------------
+### JIRA BOARD
+![Imgur](https://i.imgur.com/b6aP4mu.png)
+
+### SMART COMMITS
+![Imgur](https://i.imgur.com/3VhWdFm.png)
 
 ### WEBPAGE MOCK AND APPLICATION FLOW
 
 Following my Jira, I created a risk assessment, MoSCoW prioritisation, mock webpage design and a diagram explaining how the application would flow. As seen below:
 
----------IMAGE-------------------
+### WEBPAGE MOCK DESIGN
+![Imgur](https://i.imgur.com/85UCYU9.png)
 
+### MoSCoW
+![Imgur](https://i.imgur.com/XzmLf1B.png)
+
+### APPLICATION FLOW MODEL
+![Imgur](https://i.imgur.com/q1P5ftS.png)
 
 #### REPOS AND NETWORK GRAPH
 
-From this I then set up two separate repositries one for the front end and one for the backend. These both made use of the feature branch model. As shown below:
+From this I then set up two separate repositries one for the front end and one for the backend. These both made use of the feature branch model. These are yet to be merged to the main branch and will be done after the project is uploaded. As shown below:
+
+### REPOS
+![Imgur](https://i.imgur.com/hx3YMyS.png)
+
+### FRONT END GRAPH NOT MERGED TO MAIN
+![Imgur](https://i.imgur.com/iSeQe3v.png)
+
+### BACK END GRAPH NOT MERGED TO MAIN
+![Imgur](https://i.imgur.com/Twh1GAH.png)
 
 
-----------IMAGE---------------
-
-PACKAGE STRUCTURE DATABASE CONNECTION
+### PACKAGE STRUCTURE DATABASE CONNECTION
 
 Following this I set up my package structure in a way that would make my application easy to follow and I created a relational SQL database to persist my data. I also created a H2 database for testing and these were connect through the application-properties files. As seen below:
 
 The SQL queries I used are included at the bottom of this README.
 
+![Imgur](https://i.imgur.com/Kx6tl6J.png)
+![Imgur](https://i.imgur.com/RgZZ7WZ.png)
 
-------------IMAGE------------
 
 ### TESTING
 
 Once my Spring application was working correctly and I had confirmed it was working as inteded using Postman. I created some MockMVC tests to test my controller methods, these tests sent rquests to my H2 database to see if the methods were returning the desired results. As seen below:
 
+![Imgur](https://i.imgur.com/gFZpyWa.png)
+
 FRONT END CONNECTION AND DESIGN
 
 To connect my front end and back end I used axios requests to interact with with my API to store data entered on my webpage into my database, for this we used JavaScript. And for the layout and design of my page I used HTML, CSS and the Bootstrap framework. The end result is below:
 
-FINAL PAGE + MODAL POPUP 
+### FINAL PAGE + MODAL POPUP 
 ![Imgur](https://i.imgur.com/5JHvLOQ.png)
-[Imgur](https://i.imgur.com/McLknO7.png)
+![Imgur](https://i.imgur.com/McLknO7.png)
 
-INITIAL WEBPAGE
-[Imgur](https://i.imgur.com/PSBgD7O.png)
+### INITIAL WEBPAGE
+![Imgur](https://i.imgur.com/PSBgD7O.png)
 
 
 ### SQL QUERIES
