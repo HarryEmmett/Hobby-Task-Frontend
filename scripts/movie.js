@@ -36,19 +36,16 @@ const getMovies = () => {
         .then(response => {
             console.log(response);
 
-
             const moviesList = response.data;
             getAllMovies.innerHTML = "";
             selectHeader.innerHTML = "";
 
             const howManyMovies = Object.keys(response.data).length;
             const movieCounter = document.createElement("h2");   //DISPLAYS LENGTH OF ARRAY FOR MOVIE LIST LENGTH
-            movieCounter.innerText = "Movie counter: " + howManyMovies;
+            movieCounter.innerText = "My movie watch list! Movie counter: " + howManyMovies;
             selectHeader.appendChild(movieCounter);
 
-
             for (let movie of moviesList) {
-
                 const userContainer = document.createElement("div");
                 userContainer.classList.add("getAllMovies");
 
@@ -70,6 +67,7 @@ const getMovies = () => {
                 genre.innerText = `Genre: ${movie.genre}`;
                 // userContainer.appendChild(genre);
                 movieBody.appendChild(genre);
+
                 const yearReleased = document.createElement("p");
                 yearReleased.classList.add("card-text");
                 yearReleased.innerText = `Released: ${movie.yearReleased}`;
@@ -158,6 +156,7 @@ const getMovies = () => {
                 console.log(userContainer);
 
                 getAllMovies.appendChild(userContainer);
+
             }
         })
         .catch(error => console.log(error));
@@ -305,50 +304,56 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
 document.querySelector("#searchName").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    console.log(this);
     const wantedName = this;
     const searchName = wantedName.searchName.value;
+    
+    console.log(searchName);
     axios
         .get(`http://localhost:8080/getByName/${searchName}`)
         .then(response => {
-            const movieRequest = response.data;
-            getAllMovies.innerHTML = "";
+            console.log(response);
+            if (response.data === "") {
+                getAllMovies.innerHTML = "";
+            } else {
+                const movieRequest = response.data;
+                getAllMovies.innerHTML = "";
 
-            const userContainer = document.createElement("div");
-            userContainer.classList.add("getAllMovies");
+                const userContainer = document.createElement("div");
+                userContainer.classList.add("getAllMovies");
 
-            const requestedCard = document.createElement("div");
-            requestedCard.style = `background-color: purple`;
-            requestedCard.classList.add("card");
+                const requestedCard = document.createElement("div");
+                requestedCard.style = `background-color: purple`;
+                requestedCard.classList.add("card");
 
-            const requestedBody = document.createElement("div");
-            requestedBody.classList.add("card-body");
+                const requestedBody = document.createElement("div");
+                requestedBody.classList.add("card-body");
 
-            const requestedName = document.createElement("h3");
-            requestedName.classList.add("card-text");
-            requestedName.innerText = movieRequest.movieName;
-            requestedBody.appendChild(requestedName);
+                const requestedName = document.createElement("h3");
+                requestedName.classList.add("card-text");
+                requestedName.innerText = movieRequest.movieName;
+                requestedBody.appendChild(requestedName);
 
-            const requestedGenre = document.createElement("p");
-            requestedGenre.classList.add("card-text");
-            requestedGenre.innerText = `Genre: ${movieRequest.genre}`;
-            requestedBody.appendChild(requestedGenre);
+                const requestedGenre = document.createElement("p");
+                requestedGenre.classList.add("card-text");
+                requestedGenre.innerText = `Genre: ${movieRequest.genre}`;
+                requestedBody.appendChild(requestedGenre);
 
-            const requestedYearReleased = document.createElement("p");
-            requestedYearReleased.classList.add("card-text");
-            requestedYearReleased.innerText = `Released: ${movieRequest.yearReleased}`;
-            requestedBody.appendChild(requestedYearReleased);
+                const requestedYearReleased = document.createElement("p");
+                requestedYearReleased.classList.add("card-text");
+                requestedYearReleased.innerText = `Released: ${movieRequest.yearReleased}`;
+                requestedBody.appendChild(requestedYearReleased);
 
-            const requestedAvailableOn = document.createElement("p");
-            requestedAvailableOn.classList.add("card-text");
-            requestedAvailableOn.innerText = `Available on: ${movieRequest.availableOn}`;
-            requestedBody.appendChild(requestedAvailableOn);
+                const requestedAvailableOn = document.createElement("p");
+                requestedAvailableOn.classList.add("card-text");
+                requestedAvailableOn.innerText = `Available on: ${movieRequest.availableOn}`;
+                requestedBody.appendChild(requestedAvailableOn);
 
-            requestedCard.appendChild(requestedBody);
-            userContainer.appendChild(requestedCard);
-            getAllMovies.appendChild(userContainer);
+                requestedCard.appendChild(requestedBody);
+                userContainer.appendChild(requestedCard);
+                getAllMovies.appendChild(userContainer);
 
-            wantedName.reset();
+                wantedName.reset();
+            }
 
         })
         .catch(error => console.error(error));

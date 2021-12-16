@@ -93,24 +93,11 @@ body {
 #movieNameGenre {
     display: flex;
     justify-content: center;
-    margin: 0 50px;
-  
 }
 
 #genreDelete {
-    display: flex;
-
-    
+    display: flex;  
 }
-
-
-
-
-
-
-
-
-
 
 #searchHeader {
     color: white;
@@ -118,4 +105,12 @@ body {
 
 #genreHeader {
     color: white;
+}
+
+#createMovie {
+    color: #56144D;
+}
+
+#myCard {
+        margin: 0 auto;
 }
