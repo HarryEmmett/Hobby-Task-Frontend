@@ -3,17 +3,18 @@
 
 ### Harry Emmett
 
-Jira link: https://harryemmett.atlassian.net/jira/software/projects/HTP2/boards/3/roadmap "\n"
+Jira link: https://harryemmett.atlassian.net/jira/software/projects/HTP2/boards/3/roadmap
 
-Git link front-end: https://github.com/HarryEmmett/Hobby-Task-Frontend/network "\n"
 
-Git link back-end: https://github.com/HarryEmmett/Hobby-Task-Backend "\n"
+Git link front-end: https://github.com/HarryEmmett/Hobby-Task-Frontend/network
+
+Git link back-end: https://github.com/HarryEmmett/Hobby-Task-Backend
 
 Introduction + task outline:
 
 To create a functioning CRUD app using all the methods covered in training the project must use:
 
-Project management - Jira board with the use of smartcommits. "\n"
+Project management - Jira board with the use of smartcommits.\n
 Version control - Code fully intergrated into Git using the feature branch model. "\n"
 Database - Relation database to persist data as well as a h2 database for testing. "\n"
 Java and spring back end - Functional application in the OOP language covered. "\n"
@@ -58,7 +59,7 @@ FRONT END CONNECTION AND DESIGN
 To connect my front end and back end I used axios requests to interact with with my API to store data entered on my webpage into my database, for this we used JavaScript. And for the layout and design of my page I used HTML, CSS and the Bootstrap framework. The end result is below:
 
 FINAL PAGE + MODAL POPUP 
-![image](https://imgur.com/5JHvLOQ
+![image](https://imgur.com/5JHvLOQ)
 ![](https://imgur.com/McLknO7)
 INITIAL WEBPAGE
 ![](https://imgur.com/PSBgD7O)
