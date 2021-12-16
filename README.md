@@ -91,6 +91,20 @@ To connect my front end and back end I used axios requests to interact with with
 ### INITIAL WEBPAGE
 ![Imgur](https://i.imgur.com/PSBgD7O.png)
 
+## READ ALL WORKING
+![Imgur](https://i.imgur.com/AAK01EK.png)
+
+### CREATE WORKING
+![Imgur](https://i.imgur.com/p6MXNBn.png)
+![Imgur](https://i.imgur.com/vTrzxu3.png)
+
+## UPDATE WORKING
+![Imgur](https://i.imgur.com/iMH0Pca.png)
+![Imgur](https://i.imgur.com/AOHRYvl.png)
+
+## DELETE WORKING
+![Imgur](https://i.imgur.com/qpBQyCf.png)
+![Imgur](https://i.imgur.com/WmkGyTh.png)
 
 ### SQL QUERIES
 
