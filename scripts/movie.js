@@ -190,7 +190,7 @@ document.querySelector("#searchGenre").addEventListener("submit", function (even
     const wantedGenre = this;
     const searchGenre = wantedGenre.searchGenre.value;
     axios
-    .put(`http://localhost:8080/replace/${movie.id}`, movieUpdateData)
+        .get(`http://localhost:8080/getByGenre/${searchGenre}`)
         .then(response => {
             const genreList = response.data;
             console.log(genreList);
@@ -306,7 +306,7 @@ document.querySelector("#searchName").addEventListener("submit", function (event
 
     const wantedName = this;
     const searchName = wantedName.searchName.value;
-    
+
     console.log(searchName);
     axios
         .get(`http://localhost:8080/getByName/${searchName}`)
