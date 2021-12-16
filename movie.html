@@ -24,9 +24,6 @@
             </div>
         </div>
     </section>
-    <!-- <div class="text-center" id="mainHeader">
-        <h2>Movie watch list</h2>
-    </div> -->
     <main class="container">
         <div class="allMovies">
             <section>
@@ -46,7 +43,7 @@
                         <label class="form-label" for="movieGenre">Genre:</label>
                         <input class="form-control" type="text" name="genre" id="movieGenre">
                         <label class="form-label" for="yearReleased">Year released:</label>
-                        <input class="form-control" type="text" name="yearReleased" id="movieYearReleased">
+                        <input class="form-control" type="number" name="yearReleased" id="movieYearReleased">
                         <label class="form-label" for="availableOn">Available on:</label>
                         <input class="form-control" type="text" name="availableOn" id="movieAvailableOn">
                         <button class="btn-secondary btn-lg" type="reset">Reset</button>
@@ -61,7 +58,6 @@
                     <div id="genreHeader">
                         <h4>Search by genre:</h4>
                     </div>
-                    <!-- <label class="form-label" for="genre">Name or genre to search:</label> -->
                     <input class="form-control" type="text" name="genre" id="searchGenre">
                     <button class="btn-primary btn-lg" type="submit" id="genreButton">Genre</button>
                 </form>
@@ -78,7 +74,6 @@
             <div class="text-center">
                 <h4 id="deleteHeader">Delete by id:</h4>
                 <form class="col-md-4" id="deleteMovie" autocomplete="off">
-                    <!-- <label class="form-label" for="movieId">Movie id to delete:</label> -->
                     <input class="form-control" type="text" name="movieId" id="movieId">
                     <button class="btn-primary btn-lg" type="submit">Delete id</button>
                 </form>

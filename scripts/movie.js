@@ -251,10 +251,10 @@ document.querySelectorAll(".push").forEach(button => button.addEventListener("cl
             getAllMovies.innerHTML = "";
             for (let platform of platformOn) {
                 const platformCard = document.createElement("div");
-                if (platform.availableOn === "Netflix") {
+                if (platform.availableOn === "netflix" || platform.availableOn === "Netflix") {
                     platformCard.style = `background-color: crimson`;
                     platformCard.classList.add("card");
-                } else if (platform.availableOn === "Amazon") {
+                } else if (platform.availableOn === "amazon" || platform.availableOn === "Amazon") {
                     platformCard.style = `background-color: dodgerblue`;
                     platformCard.classList.add("card");
                 } else {
