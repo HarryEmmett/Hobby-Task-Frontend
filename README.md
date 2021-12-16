@@ -65,8 +65,9 @@ FRONT END CONNECTION AND DESIGN
 To connect my front end and back end I used axios requests to interact with with my API to store data entered on my webpage into my database, for this we used JavaScript. And for the layout and design of my page I used HTML, CSS and the Bootstrap framework. The end result is below:
 
 FINAL PAGE + MODAL POPUP 
-![image](https://imgur.com/5JHvLOQ)
-![](https://imgur.com/McLknO7)
+![Imgur](https://i.imgur.com/5JHvLOQ.png)
+[Imgur](https://i.imgur.com/McLknO7.png)
+
 INITIAL WEBPAGE
 [Imgur](https://i.imgur.com/PSBgD7O.png)
 
