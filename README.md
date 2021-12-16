@@ -10,16 +10,22 @@ Git link front-end: https://github.com/HarryEmmett/Hobby-Task-Frontend/network
 
 Git link back-end: https://github.com/HarryEmmett/Hobby-Task-Backend
 
-Introduction + task outline:
+### Introduction + task outline:
 
 To create a functioning CRUD app using all the methods covered in training the project must use:
 
-Project management - Jira board with the use of smartcommits.\n
-Version control - Code fully intergrated into Git using the feature branch model. "\n"
-Database - Relation database to persist data as well as a h2 database for testing. "\n"
-Java and spring back end - Functional application in the OOP language covered. "\n"
-Front end - Functioning frontend website that communicated with back end. "\n"
-Testing - Acceptable coverage using MockMVC testing. "\n"
+Project management - Jira board with the use of smartcommits.
+
+Version control - Code fully intergrated into Git using the feature branch model.
+
+Database - Relation database to persist data as well as a h2 database for testing.
+
+Java and spring back end - Functional application in the OOP language covered.
+
+Front end - Functioning frontend website that communicated with back end.
+
+Testing - Acceptable coverage using MockMVC testing.
+
 
 ### JIRA
 
@@ -62,7 +68,7 @@ FINAL PAGE + MODAL POPUP
 ![image](https://imgur.com/5JHvLOQ)
 ![](https://imgur.com/McLknO7)
 INITIAL WEBPAGE
-![](https://imgur.com/PSBgD7O)
+[Imgur](https://i.imgur.com/PSBgD7O.png)
 
 
 ### SQL QUERIES
